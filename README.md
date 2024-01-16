@@ -10,7 +10,7 @@ The solution includes a complete L1/2/3 implementation with minimal external dep
 
 See the [srsRAN Project](https://www.srsran.com/) for information, guides and project news.
 
-Build instructions and user guides - [srsRAN Project documentation](https://docs.srsran.com/projects/project).
+Build instructions and user guide(s) - [srsRAN Project documentation](https://docs.srsran.com/projects/project).
 
 Community announcements and support - [Discussion board](https://www.github.com/srsran/srsran_project/discussions).
 
