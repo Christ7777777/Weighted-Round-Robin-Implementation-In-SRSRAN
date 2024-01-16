@@ -67,7 +67,7 @@ Build Instructions
 Download and build srsRAN:
 
 ```bash
-git clone https://github.com/srsran/srsRAN_Project.git
+git clone https://github.com/Christ7777777/Weighted-Round-Robin-Implementation-In-SRSRAN.git
 cd srsRAN_Project
 mkdir build
 cd build
@@ -77,3 +77,14 @@ make test
 ```
 
 PHY layer tests use binary test vectors and are not built by default. To enable, see the [docs](https://docs.srsran.com/projects/project/en/latest/user_manuals/source/installation.html).
+
+KEY MODIFICATIONS FOR RESOURCE ALLOCATION
+------------------------------------------
+
+In the round_robin_apply function, there is a special handling mechanism for User Equipments (UEs) with odd indices:
+
+Identification of Odd-Indexed UEs: The function checks if the index of a UE is odd using the condition is_odd_index = u.ue_index % 2 != 0. If the result of this modulus operation is non-zero, the UE index is odd.
+
+Dual Allocation Attempt for Odd-Indexed UEs: For UEs with an odd index, the function performs a unique allocation strategy. After a successful first allocation attempt (alloc_result_first == alloc_outcome::success), the function immediately attempts a second resource allocation for the same UE, regardless of whether other UEs are yet to be allocated resources in the current round.
+
+Purpose of This Approach: This approach of double allocation for odd-indexed UEs(Prioritized UEs) suggests a potential strategy to balance or optimize resource allocation in a certain context
